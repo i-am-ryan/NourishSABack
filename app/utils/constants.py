@@ -49,7 +49,10 @@ SUCCESS_MESSAGES = {
     "LOGOUT_SUCCESS": "Logout successful",
     "FOOD_DONATED": "Food donation created successfully",
     "FOOD_CLAIMED": "Food claimed successfully",
-    "TASK_COMPLETED": "Volunteer task completed"
+    "TASK_COMPLETED": "Volunteer task completed",
+    "PASSWORD_RESET_SENT": "Password reset instructions sent to your email",
+    "PASSWORD_RESET_SUCCESS": "Password reset successfully",
+    "EMAIL_VERIFIED": "Email verified successfully"
 }
 
 ERROR_MESSAGES = {
@@ -58,5 +61,10 @@ ERROR_MESSAGES = {
     "UNAUTHORIZED": "Authentication required",
     "FORBIDDEN": "Permission denied",
     "NOT_FOUND": "Resource not found",
-    "VALIDATION_ERROR": "Invalid input data"
+    "VALIDATION_ERROR": "Invalid input data",
+    "WEAK_PASSWORD": "Password does not meet security requirements",
+    "TOKEN_EXPIRED": "Token has expired",
+    "INVALID_TOKEN": "Invalid or malformed token",
+    "ACCOUNT_INACTIVE": "Account is inactive",
+    "EMAIL_NOT_VERIFIED": "Email address not verified"
 }

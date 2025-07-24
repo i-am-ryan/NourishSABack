@@ -4,8 +4,9 @@ from supabase import create_client, Client
 import os
 from dotenv import load_dotenv
 from app.config import settings  
+from app.routes.auth import router as auth_router  # Import auth router
 
-#  environment variables
+# Load environment variables
 load_dotenv()
 
 # FastAPI app 
@@ -25,6 +26,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Include routers
+app.include_router(auth_router)  # Add auth routes
+
 # Supabase client
 supabase: Client = create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY)
 
@@ -39,7 +43,6 @@ async def root():
 @app.get("/health")
 async def health_check():
     try:
-        
         response = supabase.table("user_profiles").select("count").execute()
         return {
             "status": "healthy",
@@ -48,7 +51,6 @@ async def health_check():
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Database connection failed: {str(e)}")
-
 
 @app.get("/test-tables")
 async def test_tables():
